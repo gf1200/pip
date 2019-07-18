@@ -22,18 +22,9 @@
   
   window.addEventListener('message', pip);
   
- function pip(event) {
+ function pip() {
     console.log('Toggling Picture-in-Picture...');
-    try {
-  
-      if (video !== document.pictureInPictureElement)
-         video.requestPictureInPicture();
-      else
-         document.exitPictureInPicture();
-  
-    } catch(error) {
-      log(`> Argh! ${error}`);
-    }
+    video.requestPictureInPicture()
   }
   
 
