@@ -19,9 +19,22 @@
 
 <script>
   const video = document.getElementById('video');
-  window.addEventListener('message', function(message) {
-    video.requestPictureInPicture();
-    console.log(video);
-    console.log(message);
-  });
+  
+  window.addEventListener('message', async function(event) {
+    console.log('Toggling Picture-in-Picture...');
+    try {
+  
+      if (video !== document.pictureInPictureElement)
+        await video.requestPictureInPicture();
+      else
+        await document.exitPictureInPicture();
+  
+    } catch(error) {
+      log(`> Argh! ${error}`);
+    } finally {
+      console.log('finally...)
+    }
+  }
+);
+
 </script>
