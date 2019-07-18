@@ -20,7 +20,9 @@
 <script>
   const video = document.getElementById('video');
   
-  window.addEventListener('message', async function(event) {
+  window.addEventListener('message', pip);
+  
+  async function pip(event) {
     console.log('Toggling Picture-in-Picture...');
     try {
   
@@ -35,6 +37,6 @@
       console.log('finally...)
     }
   }
-);
+  
 
 </script>
